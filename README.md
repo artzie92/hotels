@@ -1,4 +1,8 @@
-## How to run Hotels app
+## How to run Hotels app - Option 1
+1. Download the binaries from here: https://github.com/artzie92/hotels/releases/tag/v1.0.0
+2. Run `dotnet Hotels.Console.dll` command 
+
+## How to run Hotels app - Option 2
 
 1. Navigate to `src/App/Hotels.Console`
 2. Run `dotnet build` command
@@ -12,3 +16,6 @@ If you want to use your own data files you can pass them with command line argum
 `dotnet run 
 -- bookings <<path to your file>>
 -- hotels <<path to your file>>`
+
+
+
