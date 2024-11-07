@@ -18,4 +18,10 @@ If you want to use your own data files you can pass them with command line argum
 -- hotels <<path to your file>>`
 
 
+## Known issues
+It is only demo app, so some things needs to be resolved in the future.
+
+1. Console arguments are not validated.
+2. Json file is not validated. 
+3. The hotels and bookings business logic has not been fully tested and validated. So there are possible logical bugs. 
 

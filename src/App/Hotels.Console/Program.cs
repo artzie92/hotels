@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Hotels.Console;
+using Hotels.Dto;
 using Hotels.Dto.Queries;
 using Hotels.Infrastructure.Handlers;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,17 +34,32 @@ while (true)
     }
 
 
-    if (option == "1")
+    try
     {
-        Availability();
+        if (option == "1")
+        {
+            Availability();
+        }
+        else if (option == "2")
+        {
+            Search();
+        }
+        else
+        {
+            Console.WriteLine("Unknown option. Try again...");
+        }
     }
-    else if (option == "2")
+    catch (HotelsException ex)
     {
-        Search();
+        var lastConsoleColor = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(ex.Message);
+        Console.ForegroundColor = lastConsoleColor;
     }
-    else
+    catch (Exception ex)
     {
-        Console.WriteLine("Unknown option. Try again...");
+        // TODO: there are still some exceptions which needs to be served. Like parsing the dates from user input etc. 
+        throw;
     }
 }
 
